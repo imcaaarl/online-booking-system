@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useForm, SubmitHandler } from "react-hook-form";
+import { getUsers } from '../../../lib/db/userqueries';
 import './style.css';
 
-export default function Client() {
+export default async function User() {
+    const users = await getUsers();
+ console.log('users: ',users)
   const authors = [
     {
       name: 'John Michael',
@@ -60,7 +61,7 @@ export default function Client() {
     <div className="mt-12 mb-8 flex flex-col gap-12">
       <div className="table-container">
         <div className="table-header">
-          <h6 className="table-title">Appointments</h6>
+          <h6 className="table-title">User</h6>
         </div>
         <div className="table-wrapper">
           <table className="table">

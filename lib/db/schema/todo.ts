@@ -6,3 +6,4 @@ export const todos = pgTable('todos', {
   createdAt: timestamp('created_at').defaultNow().notNull(),
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
+
